@@ -7,7 +7,11 @@ from replit import db
 from keep_alive import keep_alive
 
 client = discord.Client()
+
+#flag words which will make the bot respond with enocuraging phrases
 sad_words = ["sad","depressed","annoyed","angry","frustrated"]
+
+#hardcoded statements
 starter_encouragements = [
   "It will be okay!!",
   "Hang in there",
@@ -48,7 +52,7 @@ async def on_message(message):
     return
 
   msg = message.content
-
+#get a inspiring quote from the bot
   if msg.startswith("$inspire"):
     quote = get_quote()
     await message.channel.send(quote)
@@ -60,12 +64,14 @@ async def on_message(message):
 
     if any(word in msg for word in sad_words):
       await message.channel.send(random.choice(options))
-
+  
+#allow the user to add a phrase
   if msg.startswith("$new"):
     encouraging_message = msg.split("$new ",1)[1]
     update_encouragements(encouraging_message)
     await message.channel.send("New encouraging message added.")
-
+ 
+#delete a user added phrase
   if msg.startswith("$del"):
     encouragements = []
     if "encouragements" in db.keys():
@@ -74,6 +80,7 @@ async def on_message(message):
       encouragements = db["encouragements"]
     await message.channel.send(encouragements)
 
+ #get a list of all the user added phrases
   if msg.startswith("$list"):
     encouragements = []
     if "encouragements" in db.keys():
@@ -91,4 +98,5 @@ async def on_message(message):
       await message.channel.send("Responding is off.")
 keep_alive()
 
-client.run(os.getenv("TOKEN"))
+#Enter your token
+client.run(os.getenv("Enter your token here"))
