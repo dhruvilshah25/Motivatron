@@ -1,5 +1,5 @@
 # Motivatron
-A cute little bot to motivate you through those tough days.:heart:
+A cute little discord bot to motivate you through those tough days.:heart:
 
 ## Getting Started
 A bot for all your discord servers to help your members get a boost of energy.
@@ -15,3 +15,7 @@ A bot for all your discord servers to help your members get a boost of energy.
 
 ### Library Installation
 1. Discord - ```pip install discord.py```
+
+### How to implement this
+
+1. Go to [Discord developer portal](https://discord.com/developers/applications) and then go to the new application menu.
