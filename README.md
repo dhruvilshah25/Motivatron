@@ -1,5 +1,5 @@
 # Motivatron
-A cute little discord bot to motivate you through those tough days.:heart:
+A discord bot to motivate you through those tough days.:heart:
 
 ## Getting Started
 A bot for all your discord servers to help your members get a boost of energy.
